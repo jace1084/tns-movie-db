@@ -1,4 +1,4 @@
-$('button').on('click', function (event) {
+$('button.btn-default').on('click', function (event) {
   event.preventDefault();
 
   var movie = $("input").val();
