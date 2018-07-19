@@ -19,6 +19,25 @@ $('button.btn-default').on('click', function (event) {
 
   });
 });
+$(document).ready(function () {
+  // event.preventDefault()
+
+  var poster = "http://image.tmdb.org/t/p/w185/";
+  var nowPlayingUrl = "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=28e7691b28199415eec6fd8d3e1ffd18";
+  
+
+  //   console.log(url);
+  $.ajax({
+    url: nowPlayingUrl
+  }).then(function (res) {
+    $('h1').text(res.results[0].title);
+    $('#plot').text(res.results[0].overview);
+    $('#ratings').text(res.results[0].vote_average);
+    $('img').attr('src', poster + res.results[0].poster_path);
+
+  });
+});
+
 
 $(document).ready(function () {
   // The base url for all API calls
@@ -35,6 +54,7 @@ $(document).ready(function () {
 
 function getMoviesByGenre(genre_id) {
   const getMoviesByGenreURL = apiBaseURL + 'genre/' + genre_id + '/movies?api_key=' + apiKey + '&language=en-US&include_adult=false&sort_by=created_at.asc';
+  var nowPlayingUrl = "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=28e7691b28199415eec6fd8d3e1ffd18";
 };
 
 var nowPlayingHTML = '';
