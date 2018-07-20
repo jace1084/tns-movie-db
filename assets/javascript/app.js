@@ -11,11 +11,11 @@ $('button.btn-default').on('click', function (event) {
   //   console.log(url);
   $.ajax({
     url: url
-  }).then(function (res) {
-    $('h1').text(res.results[0].title);
-    $('#plot').text(res.results[0].overview);
-    $('#ratings').text(res.results[0].vote_average);
-    $('img').attr('src', poster + res.results[0].poster_path);
+  }).then(function (response) {
+    $('h1').text(response.results[0].title);
+    $('#plot').text(response.results[0].overview);
+    $('#ratings').text(response.results[0].vote_average);
+    $('img').attr('src', poster + response.results[0].poster_path);
 
   });
 });
