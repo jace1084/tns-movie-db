@@ -1,3 +1,28 @@
+body, html {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #999;
+    font-size: 15px;
+    background-color: #222;
+}
+
+
+/* search movie */
+/* stop the glowing blue shadow */
+input.form-control:focus {
+    box-shadow:none;
+    -webkit-box-shadow:none; 
+    border-color:#cccccc;
+   }
+ 
+input#searchMovieNeWindowxfxInput {
+    margin-top: 0px;
+}
+button.btn.btn-default{
+    width: 40px;
+    height: 45px;
+}
+
+
 /* sign-in html */
 /* hide sign in forms */
 .signin-hide {
@@ -22,19 +47,3 @@ input.form-control {
     margin-top: 10px;
 }
 /* end of sign-in styling */
-
-/* search movie */
-/* stop the glowing blue shadow */
-input.form-control:focus {
-    box-shadow:none;
-    -webkit-box-shadow:none; 
-    border-color:#cccccc;
-   }
- 
-input#searchMovieNeWindowxfxInput {
-    margin-top: 0px;
-}
-button.btn.btn-default{
-    width: 40px;
-    height: 45px;
-}
