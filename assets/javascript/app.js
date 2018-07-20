@@ -24,9 +24,7 @@ $(document).ready(function () {
 
   var poster = "http://image.tmdb.org/t/p/w185/";
   var nowPlayingUrl = "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=28e7691b28199415eec6fd8d3e1ffd18";
-  
 
-  //   console.log(url);
   $.ajax({
     url: nowPlayingUrl
   }).then(function (res) {
