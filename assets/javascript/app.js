@@ -130,7 +130,8 @@ $(document).ready(function () {
 //Display sign in forms on click
 $('#login-link').on('click', function () {
   event.preventDefault();
-  $('div').removeClass('signin-hide');
+  $('#movie-display').addClass('signin-hide');
+  $('#signin-show').removeClass('signin-hide');
   $(".user-info").html("");
 })
 
