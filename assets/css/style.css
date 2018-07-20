@@ -22,6 +22,9 @@ button.btn.btn-default{
     height: 45px;
 }
 
+ul.dropdown-menu {
+    background-color: #f3f3f3;
+}
 
 /* sign-in html */
 /* hide sign in forms */
