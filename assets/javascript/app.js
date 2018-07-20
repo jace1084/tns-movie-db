@@ -11,16 +11,17 @@ $('button.btn-default').on('click', function (event) {
   //   console.log(url);
   $.ajax({
     url: url
-  }).then(function (response) {
-    $('h1').text(response.results[0].title);
-    $('#plot').text(response.results[0].overview);
-    $('#ratings').text(response.results[0].vote_average);
-    $('img').attr('src', poster + response.results[0].poster_path);
+  }).then(function (res) {
+      var movieInfo = $('<h1>').html(res.results[0].title + res.results[0].overview + res.results[0].vote_average);
+      var movieImg = $("<img>").attr('src', poster + res.results[0].poster_path);
+      var movieDiv = $("<div>");
+      
+      movieDiv.append(movieInfo,movieImg);
+      $("#movie-grid").append(movieDiv);
 
   });
 });
 $(document).ready(function () {
-  // event.preventDefault()
 
   var poster = "http://image.tmdb.org/t/p/w185/";
   var nowPlayingUrl = "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=28e7691b28199415eec6fd8d3e1ffd18";
@@ -30,6 +31,7 @@ $(document).ready(function () {
     url: nowPlayingUrl
   }).then(function (res) {
     for(i=0; i<res.results.length; i++){
+      debugger;
       console.log(res.results[i].title);
       var movieInfo = $('<h1>').html(res.results[i].title + res.results[i].overview + res.results[i].vote_average);
       debugger;
@@ -60,92 +62,92 @@ $(document).ready(function () {
 					//53 = thriller
 
 
-$(document).ready(function () {
-  // The base url for all API calls
-  var apiBaseURL = 'http://api.themoviedb.org/3/';
+// $(document).ready(function () {
+//   // The base url for all API calls
+//   var apiBaseURL = 'http://api.themoviedb.org/3/';
 
-  // The api key to use as reference
-  var apiKey = "28e7691b28199415eec6fd8d3e1ffd18";
+//   // The api key to use as reference
+//   var apiKey = "28e7691b28199415eec6fd8d3e1ffd18";
 
-  // URL in Authentication. Base URL of image
-  var poster = "http://image.tmdb.org/t/p/w185/";
+//   // URL in Authentication. Base URL of image
+//   var poster = "http://image.tmdb.org/t/p/w185/";
 
-  const nowPlayingURL = apiBaseURL + 'movie/now_playing?api_key=' + apiKey;
-});
+//   const nowPlayingURL = apiBaseURL + 'movie/now_playing?api_key=' + apiKey;
+// });
 
-function getMoviesByGenre(genre_id) {
-  const getMoviesByGenreURL = apiBaseURL + 'genre/' + genre_id + '/movies?api_key=' + apiKey + '&language=en-US&include_adult=false&sort_by=created_at.asc';
-  var nowPlayingUrl = "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=28e7691b28199415eec6fd8d3e1ffd18";
-};
+// function getMoviesByGenre(genre_id) {
+//   const getMoviesByGenreURL = apiBaseURL + 'genre/' + genre_id + '/movies?api_key=' + apiKey + '&language=en-US&include_adult=false&sort_by=created_at.asc';
+//   var nowPlayingUrl = "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=28e7691b28199415eec6fd8d3e1ffd18";
+// };
 
-var nowPlayingHTML = '';
-var genreHTML = '';
+// var nowPlayingHTML = '';
+// var genreHTML = '';
 
-// $('.navbar-brand').click(function () {
-//   getNowPlayingData();
-//   $('#movie-grid').html(nowPlayingHTML);
-//   $('#movieGenreLabel').html("Now Playing");
+// // $('.navbar-brand').click(function () {
+// //   getNowPlayingData();
+// //   $('#movie-grid').html(nowPlayingHTML);
+// //   $('#movieGenreLabel').html("Now Playing");
+// // })
+// // $('.nowPlaying').click(function () {
+// //   getNowPlayingData();
+// //   $('#movie-grid').html(nowPlayingHTML);
+// //   $('#movieGenreLabel').html("Now Playing");
+// // })
+// $('#action').click(function () {
+//   getMoviesByGenre(28);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Action");
 // })
-// $('.nowPlaying').click(function () {
-//   getNowPlayingData();
-//   $('#movie-grid').html(nowPlayingHTML);
-//   $('#movieGenreLabel').html("Now Playing");
+// $('#animation').click(function () {
+//   getMoviesByGenre(16);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Animation");
 // })
-$('#action').click(function () {
-  getMoviesByGenre(28);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Action");
-})
-$('#animation').click(function () {
-  getMoviesByGenre(16);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Animation");
-})
-$('#comedy').click(function () {
-  getMoviesByGenre(35);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Comedy");
-})
-$('#drama').click(function () {
-  getMoviesByGenre(18);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Drama");
-})
-$('#family').click(function () {
-  getMoviesByGenre(10751);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Family");
-})
-$('#fantasy').click(function () {
-  getMoviesByGenre(14);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Fantasy");
-})
-$('#horror').click(function () {
-  getMoviesByGenre(27);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Horror");
-})
-$('#music').click(function () {
-  getMoviesByGenre(10402);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Music");
-})
-$('#romance').click(function () {
-  getMoviesByGenre(10749);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Romance");
-})
-$('#scifi').click(function () {
-  getMoviesByGenre(878);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Science Fiction");
-})
-$('#thriller').click(function () {
-  getMoviesByGenre(53);
-  $('#movie-grid').html(genreHTML);
-  $('#movieGenreLabel').html("Thriller");
-});
+// $('#comedy').click(function () {
+//   getMoviesByGenre(35);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Comedy");
+// })
+// $('#drama').click(function () {
+//   getMoviesByGenre(18);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Drama");
+// })
+// $('#family').click(function () {
+//   getMoviesByGenre(10751);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Family");
+// })
+// $('#fantasy').click(function () {
+//   getMoviesByGenre(14);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Fantasy");
+// })
+// $('#horror').click(function () {
+//   getMoviesByGenre(27);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Horror");
+// })
+// $('#music').click(function () {
+//   getMoviesByGenre(10402);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Music");
+// })
+// $('#romance').click(function () {
+//   getMoviesByGenre(10749);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Romance");
+// })
+// $('#scifi').click(function () {
+//   getMoviesByGenre(878);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Science Fiction");
+// })
+// $('#thriller').click(function () {
+//   getMoviesByGenre(53);
+//   $('#movie-grid').html(genreHTML);
+//   $('#movieGenreLabel').html("Thriller");
+// });
 
 
 
