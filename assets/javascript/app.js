@@ -1,7 +1,7 @@
 $('button.btn-default').on('click', function (event) {
   event.preventDefault();
   //to remove sigin forms
-  // $('#signin-show').addClass('signin-hide');
+  $('#signin-show').addClass('signin-hide');
 
   var movie = $("input").val();
   var poster = "http://image.tmdb.org/t/p/w185/";
