@@ -28,9 +28,8 @@ $(document).ready(function () {
   $.ajax({
     url: nowPlayingUrl
   }).then(function (res) {
-    $('h1').text(res.results[0].title);
-    $('#plot').text(res.results[0].overview);
-    $('#ratings').text(res.results[0].vote_average);
+    $('h1').text(res.results[0].title + res.results[0].overview);
+    $('#rating').text(res.results[0].vote_average);
     $('img').attr('src', poster + res.results[0].poster_path);
 
   });
