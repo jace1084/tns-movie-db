@@ -21,86 +21,59 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-        <a class="navbar-brand" href="index.html">Home</a>
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <!-- <a class="navbar-brand" href="#">Home</a> -->
+        </div>
+  
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html" class="nowPlaying">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Genres<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="action" id="action">Action</a></li>
+                <li><a href="#" class="animation" id="animation">Animation</a></li>
+                <li><a href="#" class="comedy" id="comedy">Comedy</a></li>
+                <li><a href="#" class="drama" id="drama">Drama</a></li>
+                <li><a href="#" class="family" id="family">Family</a></li>
+                <li><a href="#" class="fantasy" id="fantasy">Fantasy</a></li>
+                <li><a href="#" class="horror" id="horror">Horror</a></li>
+                <li><a href="#" class="music" id="music">Music</a></li>
+                <li><a href="#" class="romance" id="romance">Romance</a></li>
+                <li><a href="#" class="scifi" id="scifi">Science Fiction</a></li>
+                <li><a href="#" class="thriller" id="thriller">Thriller</a></li>
+              </ul>
+              </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-right searchForm">
+                  <div class="form-group">
+                    <input id="searchMovieNeWindowxfxInput" type="text" class="form-control" placeholder="Search movies">
+                  </div>
+                  <button type="submit" class="btn btn-default">
+                    <!-- Submit -->
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </form>
+                <li class="icon-bar">
+                    <a id="" href="sign-in.html"> Sign in</a>
+                </li>
+              </ul>
+        </div>
+        <!-- /.navbar-collapse -->
       </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="#" class="nowPlaying">Now Playing</a>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Genres
-                            <span class="caret"></span>
-                        </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="#" class="action" id="action">Action</a>
-              </li>
-              <li>
-                <a href="#" class="animation" id="animation">Animation</a>
-              </li>
-              <li>
-                <a href="#" class="comedy" id="comedy">Comedy</a>
-              </li>
-              <li>
-                <a href="#" class="drama" id="drama">Drama</a>
-              </li>
-              <li>
-                <a href="#" class="family" id="family">Family</a>
-              </li>
-              <li>
-                <a href="#" class="fantasy" id="fantasy">Fantasy</a>
-              </li>
-              <li>
-                <a href="#" class="music" id="music">Music</a>
-              </li>
-              <li>
-                <a href="#" class="romance" id="romance">Romance</a>
-              </li>
-              <li>
-                <a href="#" class="scifi" id="scifi">Science Fiction</a>
-              </li>
-              <li>
-                <a href="#" class="thriller" id="thriller">Thriller</a>
-              </li>
-            </ul>
-
-
-
-            <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form navbar-right searchForm">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search movies">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
-            </ul>
-
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="icon-bar">
-            <a href="sign-in.html"> Sign in</a>
-          </li>
-
-        </ul>
-      </div>
-
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
+      <!-- /.container-fluid -->
+    </nav>
+  
 
 
   <!--End of Navigation  -->
@@ -193,7 +166,7 @@
       email = $('#email-input').val().trim();
       password = $('#password-input').val().trim();
 
-      dataRef.ref().push({
+      dataRef.ref('users').push({
         name: nickname,
         email: email,
         password: password,
@@ -208,7 +181,7 @@
 
     });
     //Display the data from Firebase
-    dataRef.ref().on("child_added", function(childSnapshot) {
+    dataRef.ref('users').on("child_added", function(childSnapshot) {
       console.log(childSnapshot.val().name);
       //$(".user-info").append("<p><span class="user-name">" + childSnapshot.val().nickname + ", thank you for creating an account!</p>");
 
