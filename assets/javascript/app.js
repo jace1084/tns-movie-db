@@ -55,14 +55,14 @@ function getNowPlayingData(){
                 // nowPlayingHTML += '<div class="genre">Genre: '+genre+'</div><br>';
                 nowPlayingHTML += '<div class="overview">' +overview+ '</div><br>';// Put overview in a separate div to make it easier to style
                 nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
-                nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
+                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
                 nowPlayingHTML += '</div>'; //close movieDetails
                 nowPlayingHTML += '</div>'; //close modal-content
                 nowPlayingHTML += '</div>'; //close modal-dialog
@@ -116,7 +116,7 @@ function getNowPlayingData(){
 					var youtubeLink = 'https://www.youtube.com/watch?v='+youtubeKey;
 					var genreHTML = '';
 					genreHTML += '<div class="col-sm-3 col-md-3 col-lg-3 eachMovie">';
-					genreHTML += '<button type="button" class="btnModal" data-toggle="modal" data-target="#exampleModal'+ i + '" data-whatever="@' + i + '">'+'<img src="'+poster+'"></button>'; 	
+					genreHTML += '<button type="button" class="btnModal" data-toggle="modal" data-target="#exampleModal'+ i + i + '">'+'<img src="'+poster+'"></button>'; 	
 					genreHTML += '<div class="modal fade" id="exampleModal' + i +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">';
 					genreHTML += '<div class="modal-dialog" role="document">';
 					genreHTML += '<div class="modal-content col-sm-12 col-lg-12">';
@@ -129,14 +129,14 @@ function getNowPlayingData(){
 					genreHTML += '<div class="release">Release Date: '+releaseDate+'</div><br>';
 					genreHTML += '<div class="overview">' +overview+ '</div><br>';
 					genreHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
-					genreHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
+					// genreHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
 					genreHTML += '</div>'; //close movieDetails
 					genreHTML += '</div>'; //close modal-content
 					genreHTML += '</div>'; //close modal-dialog
@@ -278,14 +278,14 @@ function getNowPlayingData(){
 					searchResultsHTML += '<div class="release">Release Date: '+releaseDate+'</div><br>';
 					searchResultsHTML += '<div class="overview">' +overview+ '</div><br>';
 					searchResultsHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
-					searchResultsHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
+					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
 					searchResultsHTML += '</div>'; //close movieDetails
 					searchResultsHTML += '</div>'; //close modal-dialog
 					searchResultsHTML += '</div>'; //close modal
