@@ -54,3 +54,11 @@ input.form-control {
     margin-top: 10px;
 }
 /* end of sign-in styling */
+#movieGenreLabel{
+margin-bottom: 10px;
+margin-left: 15px;
+text-align: left;
+color: white;
+font-size: 24px;
+text-shadow: 2px 2px 4px #a20909;
+}
