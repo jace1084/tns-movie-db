@@ -55,14 +55,6 @@ function getNowPlayingData(){
                 // nowPlayingHTML += '<div class="genre">Genre: '+genre+'</div><br>';
                 nowPlayingHTML += '<div class="overview">' +overview+ '</div><br>';// Put overview in a separate div to make it easier to style
                 nowPlayingHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
-                // nowPlayingHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
                 nowPlayingHTML += '</div>'; //close movieDetails
                 nowPlayingHTML += '</div>'; //close modal-content
                 nowPlayingHTML += '</div>'; //close modal-dialog
@@ -77,24 +69,6 @@ function getNowPlayingData(){
         }
     }) 
 }
-
-
-											// Check genreIDs and genre names: 
-									// http://api.themoviedb.org/3/movie/:movieID?api_key=<<>>
-												//28 = action
-												//12 = adventure
-												//16 = animation
-												//35 = comedy
-												//80 = crime
-												//18 = drama
-												//10751 = family
-												//14 = fantasy
-												//36 = history
-												//27 = horror
-												//10402 = music
-												//10749 = romance
-												//878 = science fiction
-												//53 = thriller
                     
 	function getMoviesByGenre(genre_id){
 		const getMoviesByGenreURL = apiBaseURL + 'genre/' + genre_id + '/movies?api_key=' + apiKey + '&language=en-US&include_adult=false&sort_by=created_at.asc';
@@ -129,23 +103,12 @@ function getNowPlayingData(){
 					genreHTML += '<div class="release">Release Date: '+releaseDate+'</div><br>';
 					genreHTML += '<div class="overview">' +overview+ '</div><br>';
 					genreHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
-					// genreHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
 					genreHTML += '</div>'; //close movieDetails
 					genreHTML += '</div>'; //close modal-content
 					genreHTML += '</div>'; //close modal-dialog
 					genreHTML += '</div>'; //close modal
 					genreHTML += '</div>'; //close off each div
 					$('#movie-grid').append(genreHTML);
-					//Without this line, there is nowhere for the posters and overviews to display so it doesn't show up 
-					// $('#movieGenreLabel').html("Now Playing");
-					//h1 will change depending on what is clicked. Will display "Now Playing" in this case.
 				})
 			}
 		}) 
@@ -157,11 +120,6 @@ function getNowPlayingData(){
 					var nowPlayingHTML = '';
 					var genreHTML = '';
 					
-					$('.navbar-brand').click(function(){
-						getNowPlayingData();
-						$('#movie-grid').html(nowPlayingHTML);
-						$('#movieGenreLabel').html("Now Playing");
-					});		
 					$('.nowPlaying').click(function(){
 						getNowPlayingData();
 						$('#movie-grid').html(nowPlayingHTML);
@@ -227,10 +185,6 @@ function getNowPlayingData(){
 						$('#movie-grid').html(genreHTML);
 						$('#movieGenreLabel').html("Thriller");
 					});
-					
-											// Search Function 
-	//Run function searchMovies AFTER an input has been submitted. Submit form first.
-	//Run searchMovies once to add an empty html to movie-grid using .html(). Then, overwrite it with the new html using .append(). Need to use .append() to overwrite or all the images will display on top of each other.
 
 			var searchTerm = '';
 			searchMovies();
@@ -278,14 +232,6 @@ function getNowPlayingData(){
 					searchResultsHTML += '<div class="release">Release Date: '+releaseDate+'</div><br>';
 					searchResultsHTML += '<div class="overview">' +overview+ '</div><br>';
 					searchResultsHTML += '<div class="rating">Rating: '+voteAverage+ '/10</div><br>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">8:30 AM' + '</div>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">10:00 AM' + '</div>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">12:30 PM' + '</div>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">3:00 PM' + '</div>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">4:10 PM' + '</div>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">5:30 PM' + '</div>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">8:00 PM' + '</div>';
-					// searchResultsHTML += '<div class="col-sm-3 btn btn-primary">10:30 PM' + '</div>';
 					searchResultsHTML += '</div>'; //close movieDetails
 					searchResultsHTML += '</div>'; //close modal-dialog
 					searchResultsHTML += '</div>'; //close modal
@@ -299,9 +245,3 @@ function getNowPlayingData(){
 		})
 	}
 });
-
-//.append(nowPlayingHTML) adds nowPlayingHTML to the present HTML
-//.html(nowPlayingHTML) ovwrwrites the HTML present with nowPlayingHTML. 
-//.html() is faster than DOM creation
-//.html() is good for when the element is empty. 
-//.append() is better when you want to add something dynamically, like adding a list item dynamically. (You would be adding a new string of HTML to the element.)
