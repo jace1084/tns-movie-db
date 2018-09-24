@@ -192,8 +192,6 @@ function getNowPlayingData(){
 			$('.searchForm').submit(function(event){
 				$('#movie-grid').html('');
 				event.preventDefault();
-				//search term is only concerned with what the user inputted 
-				//Get input with .val();
 				searchTerm = $('.form-control').val();
 				searchMovies();
 			});
